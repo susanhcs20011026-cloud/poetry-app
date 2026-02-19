@@ -1,4 +1,6 @@
 <script lang="ts">
+    // 只有当 app.css 确实存在于 src/app.css 时才取消下面这行的注释
+    // import "../app.css"; 
     let { children } = $props();
 </script>
 

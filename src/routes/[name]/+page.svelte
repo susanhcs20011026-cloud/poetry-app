@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths'; // 1. 引入 base 变量
     import type { Poem } from '$lib';
     let { data } = $props();
 
@@ -17,7 +18,7 @@
 </script>
 
 <main class="prose max-w-none prose-hr:hidden">
-    <a href="/" class="no-underline text-blue-500 text-sm">← Return to Main List</a>
+    <a href="{base}/" class="no-underline text-blue-500 text-sm">← Return to Main List</a>
     
     <h1 class="mt-4">Poems of {data.poetData.name}</h1>
 
@@ -36,7 +37,8 @@
         </h2>
         
         {#if filteredPoems.length > 0}
-            <ul class="list-none pl-0"> {#each filteredPoems as poem}
+            <ul class="list-none pl-0"> 
+                {#each filteredPoems as poem}
                     <li class="my-1">
                         <a href="#{poem.title}" class="text-blue-600 no-underline hover:underline">
                             {poem.title}
